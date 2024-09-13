@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="chat.title">Chatbot Application</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="chat-container">
+        <header class="chat-header">
+            <span data-i18n="chat.title">Chatbot</span>
+            <select id="languageSelect" onchange="changeLanguage()" aria-label="Select Language">
+                <option value="en">English</option>
+                <option value="es">Español</option>
+            </select>
+        </header>
+        <main class="chat-area" id="chatArea" aria-live="polite"></main>
+        <footer class="chat-input">
+            <input type="text" id="userInput" onkeydown="handleKeyDown(event)" placeholder="" aria-label="User message input"/>
+            <button onclick="sendMessage()" aria-label="Send message" data-i18n="chat.sendButton">Send</button>
+            <button onclick="redirectToBooking()" aria-label="Book Tickets" data-i18n="chat.bookButton">Book Tickets</button>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

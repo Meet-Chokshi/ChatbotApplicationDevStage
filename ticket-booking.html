@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="booking.header">Ticket Booking</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="booking-container">
+        <header class="chat-header">
+            <span data-i18n="booking.header">Ticket Booking</span>
+        </header>
+        <main class="chat-area">
+            <form id="bookingForm">
+                <label for="fullName" data-i18n="booking.fullName">Full Name:</label>
+                <input type="text" id="fullName" required>
+
+                <label for="email" data-i18n="booking.email">Email ID:</label>
+                <input type="email" id="email" required>
+
+                <label for="phoneNumber" data-i18n="booking.phoneNumber">Phone Number:</label>
+                <input type="tel" id="phoneNumber" required>
+
+                <label data-i18n="booking.selectShows">Select Shows:</label>
+                <div class="checkbox-group">
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="museumShow" value="50">
+                        <label for="museumShow" data-i18n="booking.museumShow">Museum</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="historyShow" value="150">
+                        <label for="historyShow" data-i18n="booking.historyShow">History of Museum Movie</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="artifactShow" value="150">
+                        <label for="artifactShow" data-i18n="booking.artifactShow">Artifact Exhibition</label>
+                    </div>
+                </div>
+
+                <label data-i18n="booking.adults">Number of Adults:</label>
+                <input type="range" id="adults" min="0" max="10" value="0" oninput="updateLabel('adultsLabel', this.value)">
+                <span id="adultsLabel">0</span>
+
+                <label data-i18n="booking.children">Number of Children (Below 12):</label>
+                <input type="range" id="children" min="0" max="10" value="0" oninput="updateLabel('childrenLabel', this.value)">
+                <span id="childrenLabel">0</span>
+
+                <label data-i18n="booking.seniors">Number of Senior Citizens (Above 60):</label>
+                <input type="range" id="seniors" min="0" max="10" value="0" oninput="updateLabel('seniorsLabel', this.value)">
+                <span id="seniorsLabel">0</span>
+
+                <button type="button" onclick="processBooking()" data-i18n="booking.payButton">Pay</button>
+            </form>
+        </main>
+    </div>
+
+    <script>
+        function updateLabel(labelId, value) {
+            document.getElementById(labelId).textContent = value;
+        }
+
+        function processBooking() {
+            const fullName = document.getElementById('fullName').value;
+            const email = document.getElementById('email').value;
+            const phoneNumber = document.getElementById('phoneNumber').value;
+
+            let total = 0;
+            document.querySelectorAll('.checkbox-group input[type="checkbox"]:checked').forEach(show => {
+                total += parseInt(show.value);
+            });
+
+            const numAdults = parseInt(document.getElementById('adults').value);
+            const numChildren = parseInt(document.getElementById('children').value);
+            const numSeniors = parseInt(document.getElementById('seniors').value);
+            total += (numAdults * 15) + (numChildren * 5) + (numSeniors * 10);
+
+            if (fullName && email && phoneNumber) {
+                alert(`Booking confirmed for ${fullName}. Total amount to pay: $${total}`);
+            } else {
+                alert('Please fill out all required fields.');
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedLanguage = localStorage.getItem('language') || 'en';
+            fetch(`Languages/${savedLanguage}.json`)
+                .then(response => response.json())
+                .then(data => {
+                    window.languageData = data;
+                    applyLanguage();
+                });
+        });
+
+        function applyLanguage() {
+            document.querySelectorAll('[data-i18n]').forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                const [category, subKey] = key.split('.');
+                element.textContent = window.languageData.booking[subKey];
+            });
+        }
+    </script>
+</body>
+</html>
