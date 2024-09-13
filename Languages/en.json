@@ -22,6 +22,7 @@
         "adults": "Number of Adults:",
         "children": "Number of Children (Below 12):",
         "seniors": "Number of Senior Citizens (Above 60):",
-        "payButton": "Pay"
+        "payButton": "Pay",
+        "selectShows": "Select Shows :-"
     }
 }
