@@ -1,0 +1,27 @@
+{
+    "chat": {
+        "title": "Chatbot",
+        "greetings": "Hello! How can I help you today?",
+        "timings": "We are open from 9 AM to 5 PM every day.",
+        "pricing": "Tickets are $15 for adults, $10 for seniors, and $5 for children.",
+        "exhibit": "Our current exhibit is 'Impressionism: A New Perspective'.",
+        "goodbye": "Goodbye! Have a great day!",
+        "unknown": "Sorry, I didn't understand that. Can you please rephrase?",
+        "placeholder": "Type your message here...",
+        "sendButton": "Send",
+        "bookButton": "Book Tickets"
+    },
+    "booking": {
+        "header": "Book Your Tickets",
+        "fullName": "Full Name:",
+        "email": "Email ID:",
+        "phoneNumber": "Phone Number:",
+        "museumShow": "Museum",
+        "historyShow": "History of Museum Movie",
+        "artifactShow": "Artifact Exhibition",
+        "adults": "Number of Adults:",
+        "children": "Number of Children (Below 12):",
+        "seniors": "Number of Senior Citizens (Above 60):",
+        "payButton": "Pay"
+    }
+}
