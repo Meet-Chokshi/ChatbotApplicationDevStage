@@ -22,6 +22,7 @@
         "adults": "Número de adultos:",
         "children": "Número de niños (menores de 12):",
         "seniors": "Número de ancianos (mayores de 60):",
-        "payButton": "Pagar"
+        "payButton": "Pagar",
+        "selectShows": "Seleccionar espectáculos :-"
     }
 }
