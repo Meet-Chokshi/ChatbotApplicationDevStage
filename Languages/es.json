@@ -1,0 +1,27 @@
+{
+    "chat": {
+        "title": "Chatbot",
+        "greetings": "¡Hola! ¿Cómo puedo ayudarte hoy?",
+        "timings": "Estamos abiertos de 9 AM a 5 PM todos los días.",
+        "pricing": "Las entradas cuestan $15 para adultos, $10 para mayores y $5 para niños.",
+        "exhibit": "Nuestra exposición actual es 'Impresionismo: Una nueva perspectiva'.",
+        "goodbye": "¡Adiós! ¡Que tengas un gran día!",
+        "unknown": "Lo siento, no entendí eso. ¿Puedes reformularlo?",
+        "placeholder": "Escribe tu mensaje aquí...",
+        "sendButton": "Enviar",
+        "bookButton": "Reservar entradas"
+    },
+    "booking": {
+        "header": "Reserva tus entradas",
+        "fullName": "Nombre completo:",
+        "email": "ID de correo electrónico:",
+        "phoneNumber": "Número de teléfono:",
+        "museumShow": "Museo",
+        "historyShow": "Historia de la película del museo",
+        "artifactShow": "Exposición de artefactos",
+        "adults": "Número de adultos:",
+        "children": "Número de niños (menores de 12):",
+        "seniors": "Número de ancianos (mayores de 60):",
+        "payButton": "Pagar"
+    }
+}
